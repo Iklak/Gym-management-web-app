@@ -27,9 +27,12 @@ function ForgotPassword() {
 
   const sendOtp = async () => {
     await axios
-      .post("http://localhost:3000/api/auth/reset-password/sendotp", {
-        email: inputField.email,
-      })
+      .post(
+        "https://gym-management-web-app.onrender.com/api/auth/reset-password/sendotp",
+        {
+          email: inputField.email,
+        },
+      )
       .then((res) => {
         console.log(res);
         setEmailSubmit(true);
@@ -44,10 +47,13 @@ function ForgotPassword() {
 
   const verifyOTP = async () => {
     await axios
-      .post("http://localhost:3000/api/auth/reset-password/checkotp", {
-        email: inputField.email,
-        otp: inputField.otp,
-      })
+      .post(
+        "https://gym-management-web-app.onrender.com/api/auth/reset-password/checkotp",
+        {
+          email: inputField.email,
+          otp: inputField.otp,
+        },
+      )
       .then((res) => {
         setOtpValidate(true);
         setContenVal("Submit Your New Password");
@@ -61,10 +67,13 @@ function ForgotPassword() {
 
   const changPassword = async () => {
     await axios
-      .post("http://localhost:3000/api/auth/reset-password", {
-        email: inputField.email,
-        newPassword: inputField.newPassword,
-      })
+      .post(
+        "https://gym-management-web-app.onrender.com/api/auth/reset-password",
+        {
+          email: inputField.email,
+          newPassword: inputField.newPassword,
+        },
+      )
       .then((res) => {
         console.log(res);
         toast.success(res.data.message);

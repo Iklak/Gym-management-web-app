@@ -20,7 +20,7 @@ function GeneralMember() {
         { status: statuss },
         {
           withCredentials: true,
-        }
+        },
       )
       .then((res) => {
         toast.success(res.data.message);
@@ -82,9 +82,9 @@ function GeneralMember() {
   const handleRenewSave = async () => {
     await axios
       .put(
-        `http://localhost:3000/api/member/update-plan/${id}`,
+        `https://gym-management-web-app.onrender.com/api/member/update-plan/${id}`,
         { membership: planMember },
-        { withCredentials: true }
+        { withCredentials: true },
       )
       .then((res) => {
         setData(res.data.member);

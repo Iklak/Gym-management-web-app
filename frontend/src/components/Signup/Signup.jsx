@@ -19,7 +19,10 @@ function Signup() {
   });
   const handleRegester = async () => {
     await axios
-      .post("http://localhost:3000/api/auth/register", inputField)
+      .post(
+        "https://gym-management-web-app.onrender.com/api/auth/register",
+        inputField,
+      )
       .then((res) => {
         console.log(res);
         toast.success(res.data.message);
@@ -50,7 +53,7 @@ function Signup() {
     try {
       const response = await axios.post(
         "https://api.cloudinary.com/v1_1/dway72hvs/image/upload",
-        data
+        data,
       );
       console.log(response);
       const image_url = response.data.url;

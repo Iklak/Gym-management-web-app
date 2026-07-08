@@ -14,9 +14,12 @@ function AddMembers({ handleClose }) {
 
   const fetchMemberShip = async () => {
     await axios
-      .get("http://localhost:3000/api/plans/getMemberShip", {
-        withCredentials: true,
-      })
+      .get(
+        "https://gym-management-web-app.onrender.com/api/plans/getMemberShip",
+        {
+          withCredentials: true,
+        },
+      )
       .then((res) => {
         // console.log(res);
         setMemberShip(res.data.membership);
@@ -33,9 +36,13 @@ function AddMembers({ handleClose }) {
 
   const handleAddMembership = async () => {
     await axios
-      .post("http://localhost:3000/api/plans/add-membership", inputField, {
-        withCredentials: true,
-      })
+      .post(
+        "https://gym-management-web-app.onrender.com/api/plans/add-membership",
+        inputField,
+        {
+          withCredentials: true,
+        },
+      )
       .then((res) => {
         console.log(res);
         toast.success(res.data.message);

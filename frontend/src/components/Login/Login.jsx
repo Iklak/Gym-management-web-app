@@ -13,9 +13,13 @@ const Login = () => {
     // sessionStorage.setItem("isLogin", true);
     // navigate("/dashboard");
     await axios
-      .post("http://localhost:3000/api/auth/login", loginField, {
-        withCredentials: true,
-      })
+      .post(
+        "https://gym-management-web-app.onrender.com/api/auth/login",
+        loginField,
+        {
+          withCredentials: true,
+        },
+      )
       .then((res) => {
         console.log(res.data);
         localStorage.setItem("gymName", res.data.gym.gymName);
